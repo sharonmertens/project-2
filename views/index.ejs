@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>CLOSET ITEM INDEX PAGE</h1>
+<ul>
+  <% for (let i = 0; i < items.length; i ++ ) { %>
+    <li>
+      Type: <a href="/closetswap/<%=items[i].id;%>">
+        <%=items[i].type; %>
+      </a>
+      <br>
+      Description: <%=items[i].description%> <br>
+      <img src="<%=items[i].img%>"> <br>
+      Brand: <%=items[i].brand%> <br>
+      Price: <%=items[i].price%> <br>
+      Size: <%=items[i].size%> <br>
+      <% if (items[i].available === true) { %>
+        You are in luck! This item is available!
+      <% }  else { %>
+        Sorry. This item is unavailable. Check out something else!
+      <% } %>
+    </li>
+  <% } %>
+</ul>
+  </body>
+</html>

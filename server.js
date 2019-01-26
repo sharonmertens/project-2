@@ -18,7 +18,7 @@ const mongoURI = process.env.MONGODB_URI
 // =======================================
 //              DATABASE
 // =======================================
-
+const Item = require('./models/items.js');
 // =======================================
 //              MIDDLEWARE
 // =======================================
@@ -35,14 +35,44 @@ app.use(methodOverride('_method'));
 //              ROUTES
 // =======================================
 
-// localhost:3000
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+// // localhost:3000
+// app.get('/', (req, res) => {
+//   res.send('Hello World');
+// });
 
 // SEED Route
 // ---------------------------------------
-
+app.get('/seed', (req ,res) => {
+  Item.create([
+    {
+      type: 'Skirt',
+      description: 'Jean Miniskirt',
+      img: 'https://images-na.ssl-images-amazon.com/images/G/01/Shopbop/p/prod/products/seven/seven4102212743/seven4102212743_q4_2-0._UY0_QL90_.jpg',
+      brand: '7 For All Mankind',
+      price: 129,
+      size: 6,
+      available: true
+    },
+    {
+      type: 'Sweatshirt',
+      description: 'Comfy roadtrip sweatshirt',
+      img: 'https://images-na.ssl-images-amazon.com/images/G/01/Shopbop/p/prod/products/wildf/wildf4235712165/wildf4235712165_q2_2-0._UY0_QL90_.jpg',
+      brand: 'Wildfox',
+      price: 108,
+      size: 0,
+      available: true
+    },
+    {
+      type: 'Pajamas',
+      description: 'Solid Ivory PJ Set',
+      img: 'https://www.shopbop.com/solid-ivory-set-bedhead/vp/v=1/1526786870.htm?folderID=13243&fm=other-shopbysize-viewall&os=false&colorId=13149',
+      brand: 'Bedhead+',
+      price: 114,
+      size: 4,
+      available: true
+    }
+  ]);
+});
 
 // UPDATE Route
 // ---------------------------------------
@@ -58,7 +88,17 @@ app.get('/', (req, res) => {
 
 // INDEX Route
 // ---------------------------------------
-
+app.get('/closetswap', (req, res) => {
+  // res.send('This is my Closet Swap Index Page');
+  Item.find({}, (err, allItems) => {
+    res.render(
+      'index.ejs',
+      {
+        items:allItems
+      }
+    );
+  });
+});
 
 // CREATE Route
 // ---------------------------------------
