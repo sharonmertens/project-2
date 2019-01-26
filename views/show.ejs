@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Closet Items Show Page</h1>
+    Description: <%=item.description%> <br>
+    <img src="<%=item.img%>"> <br>
+    Brand: <%=item.brand%> <br>
+    Price: <%=item.price%> <br>
+    Size: <%=item.size%> <br>
+    <% if (item.available === true) { %>
+      You are in luck! This item is available!
+    <% }  else { %>
+      Sorry. This item is unavailable. Check out something else!
+    <% } %>
+    <!-- LINK BACK TO INDEX PAGE -->
+    <nav>
+      <a href="/closetswap">Back to Closet Items Page</a>
+    </nav>
+  </body>
+</html>

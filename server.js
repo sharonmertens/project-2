@@ -110,6 +110,16 @@ app.get('/closetswap', (req, res) => {
 
 // SHOW Route
 // ---------------------------------------
+app.get('/closetswap/:id', (req, res) => {
+  Item.findById(req.params.id, (err, foundItem) => {
+    res.render(
+      'show.ejs',
+      {
+        item:foundItem
+      }
+    );
+  });
+});
 
 // =======================================
 //              LISTENER
