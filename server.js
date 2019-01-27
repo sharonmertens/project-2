@@ -76,6 +76,16 @@ app.get('/seed', (req ,res) => {
 
 // UPDATE Route
 // ---------------------------------------
+app.put('/closetswap/:id', (req, res) => {
+  if (req.body.available === 'on') {
+    req.body.available = true;
+  } else {
+    req.body.available = false;
+  }
+  Item.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+    res.redirect('/closetswap');
+  });
+});
 
 
 // EDIT Route
