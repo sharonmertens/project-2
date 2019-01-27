@@ -102,7 +102,16 @@ app.get('/closetswap', (req, res) => {
 
 // CREATE Route
 // ---------------------------------------
-
+app.post('/closetswap', (req, res) => {
+  if (req.body.available === 'on' ) {
+    req.body.available = true;
+  } else {
+    req.body.available = false;
+  }
+  Item.create(req.body, (err, createdItem) => {
+    res.redirect('/closetswap');
+  });
+});
 
 // NEW Route
 // ---------------------------------------
