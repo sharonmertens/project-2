@@ -10,4 +10,16 @@ touch models/items.js
 require mongoose
 create a schema
 
-export it 
+export it
+
+create routes:
+index
+show
+create
+delete
+edit
+update
+
+add public folder
+
+create express router 
