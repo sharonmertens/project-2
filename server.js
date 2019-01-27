@@ -106,7 +106,9 @@ app.get('/closetswap', (req, res) => {
 
 // NEW Route
 // ---------------------------------------
-
+app.get('/closetswap/new', (req, res) => {
+  res.render('new.ejs');
+});
 
 // SHOW Route
 // ---------------------------------------
