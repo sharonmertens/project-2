@@ -22,4 +22,6 @@ update
 
 add public folder
 
-create express router 
+partials ejs 
+
+create express router

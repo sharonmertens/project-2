@@ -93,7 +93,7 @@ app.put('/closetswap/:id', (req, res) => {
 app.get('/closetswap/:id/edit', (req, res) => {
   Item.findById(req.params.id, (err, foundItem) => {
     res.render(
-      'edit.ejs',
+      './items/edit.ejs',
       {
         item: foundItem
       }
@@ -115,7 +115,7 @@ app.get('/closetswap', (req, res) => {
   // res.send('This is my Closet Swap Index Page');
   Item.find({}, (err, allItems) => {
     res.render(
-      'index.ejs',
+      './items/index.ejs',
       {
         items:allItems
       }
@@ -139,7 +139,7 @@ app.post('/closetswap', (req, res) => {
 // NEW Route
 // ---------------------------------------
 app.get('/closetswap/new', (req, res) => {
-  res.render('new.ejs');
+  res.render('./items/new.ejs');
 });
 
 // SHOW Route
@@ -147,7 +147,7 @@ app.get('/closetswap/new', (req, res) => {
 app.get('/closetswap/:id', (req, res) => {
   Item.findById(req.params.id, (err, foundItem) => {
     res.render(
-      'show.ejs',
+      './items/show.ejs',
       {
         item:foundItem
       }
