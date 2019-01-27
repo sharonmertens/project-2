@@ -84,7 +84,11 @@ app.get('/seed', (req ,res) => {
 
 // DELETE Route
 // ---------------------------------------
-
+app.delete('/closetswap/:id', (req, res) => {
+  Item.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect('/closetswap');
+  });
+});
 
 // INDEX Route
 // ---------------------------------------
