@@ -80,7 +80,16 @@ app.get('/seed', (req ,res) => {
 
 // EDIT Route
 // ---------------------------------------
-
+app.get('/closetswap/:id/edit', (req, res) => {
+  Item.findById(req.params.id, (err, foundItem) => {
+    res.render(
+      'edit.ejs',
+      {
+        item: foundItem
+      }
+    );
+  });
+});
 
 // DELETE Route
 // ---------------------------------------

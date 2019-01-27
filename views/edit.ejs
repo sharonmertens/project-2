@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Closet Items Page</h1>
+    <form action="/closetswap/<%=item.id%>?_method=PUT" method="POST">
+      Type: <input type="text" name="type" value=<%=item.type%> /> <br>
+      Description: <input type="text" name="description" value=<%=item.description%> /> <br>
+      Image: <input type="text" name="image" value=<%=item.image%> /> <br>
+      Brand: <input type="text" name="brand" value=<%=item.brand%> /> <br>
+      Price: <input type="number" name="price" value=<%=item.price%> /> <br>
+      Size: <input type="number" name="size" value=<%=item.size%> /> <br>
+      Available:
+        <input
+          type="checkbox"
+          name="available"
+          <% if (item.available === true ) { %>
+            checked
+          <% } %>
+        /> <br>
+      <input type="submit" name="Submit Changes" /> <br>
+    </form>
+    <!-- LINK BACK TO INDEX PAGE  -->
+    <nav>
+      <a href="/closetswap">Back to Closet Items Page</a>
+  </body>
+</html>
