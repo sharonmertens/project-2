@@ -57,3 +57,13 @@ then you need to have our sign up link in our index.ejs link to our users/new.ej
 ---
 
 repeat for our sessions
+
+make a model for our users in models/users.js
+
+in our controllers/users_controller.js we have to require our model
+then create our post route
+and then rediret back to our welcome page
+
+then we need to use express-session as middleware
+npm install express-session
+require it in server.js 

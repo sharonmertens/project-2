@@ -6,4 +6,4 @@ sessions.get('/new', (req, res) => {
   res.render('sessions/new.ejs');
 });
 
-module.exports = sessions;
+module.exports = sessions

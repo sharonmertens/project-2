@@ -7,16 +7,18 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 const app = express();
 const db = mongoose.connection;
+const session = require('express-session');
 
 // =======================================
 //             CONFIGURATION
 // =======================================
 // Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT
-const mongoURI = process.env.MONGODB_URI
+const PORT = process.env.PORT || 3000
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'project-2'
 
 // use controller file in server.js
 const itemsController = require('./controllers/items');
+
 
 // =======================================
 //              MIDDLEWARE
@@ -33,6 +35,8 @@ app.use(methodOverride('_method'));
 
 // use controller file in server.js
 app.use('/closetswap', itemsController);
+
+// app.use(session())
 
 // =======================================
 //              AUTHORIZATION ROUTES
