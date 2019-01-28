@@ -59,7 +59,7 @@ const userController = require('./controllers/users_controller.js');
 app.use('/users', userController);
 
 // =======================================
-//          SESSIONS - 7 restful routes
+//          SESSIONS routes
 // =======================================
 const sessionsController = require('./controllers/sessions_controller.js');
 app.use('/sessions', sessionsController);
