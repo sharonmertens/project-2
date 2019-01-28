@@ -10,10 +10,17 @@
       <!-- if already signed in: -->
       <% if (currentUser) { %>
         Welcome <%=currentUser.username%>, to Closet Swap!
-        <a href="/sessions/">Log out</a>
+        <br>
+        <!-- log out link disguised as a button using form -->
+        <form action="/sessions?_method=DELETE" method="POST">
+          <input type="submit" value="Log Out">
+        </form>
+        <!-- this is no longer needed -->
+        <!-- <a href="/sessions/">Log out</a> -->
         </h1>
       <!-- if NOT signed in:   -->
       <% } else { %>
+        <h1>Welcome to Closet Swap!</h1>
         <h2>
           <!-- log in:  -->
           Already a member? <a href="/sessions/new">Log in here.</a>
