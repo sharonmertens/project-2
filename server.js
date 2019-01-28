@@ -36,14 +36,20 @@ app.use(methodOverride('_method'));
 // use controller file in server.js
 app.use('/closetswap', itemsController);
 
-// app.use(session())
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
 
 // =======================================
 //              AUTHORIZATION ROUTES
 // =======================================
 // INDEX route
 app.get('/', (req, res) => {
-  res.render('index.ejs');
+  res.render('index.ejs', {
+    currentUser: req.session.currentUser
+  });
 });
 
 // =======================================

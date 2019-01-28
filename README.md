@@ -66,4 +66,10 @@ and then rediret back to our welcome page
 
 then we need to use express-session as middleware
 npm install express-session
-require it in server.js 
+require it in server.js
+store secret in .env
+
+build user model
+build sessions controller
+
+our post request is going to set up a session for the user. we'll add the user data to our sessions object and we'll be able to have access to it throughout our app

@@ -6,14 +6,24 @@
   </head>
   <body>
     <div class="container">
-      <h1>Welcome to Closet Swap!</h1>
-      <h2>
-        Already a member? <a href="/sessions/new">Log in here.</a>
-      </h2>
-      <h2>
-        New to our club? No problem! <br>
-        Create a new account <a href="/users/new">here.</a>
-      </h2>
+      <h1>
+      <!-- if already signed in: -->
+      <% if (currentUser) { %>
+        Welcome <%=currentUser.username%>, to Closet Swap!
+        <a href="/sessions/">Log out</a>
+        </h1>
+      <!-- if NOT signed in:   -->
+      <% } else { %>
+        <h2>
+          <!-- log in:  -->
+          Already a member? <a href="/sessions/new">Log in here.</a>
+        </h2>
+        <h2>
+          <!-- create user  -->
+          New to our club? No problem! <br>
+          Create a new account <a href="/users/new">here.</a>
+        </h2>
+      <% } %>
     </div>
   </body>
 </html>
