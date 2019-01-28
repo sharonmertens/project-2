@@ -49,6 +49,12 @@ const userController = require('./controllers/users_controller.js');
 app.use('/users', userController);
 
 // =======================================
+//          SESSIONS - 7 restful routes
+// =======================================
+const sessionsController = require('./controllers/sessions_controller.js');
+app.use('/sessions', sessionsController);
+
+// =======================================
 //              LISTENER
 // =======================================
 app.listen(PORT, () => {
