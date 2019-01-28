@@ -22,6 +22,12 @@ update
 
 add public folder
 
-partials ejs 
+partials ejs
 
 create express router
+
+authorization routes
+
+create directory views/sessions and views/users
+create controllers/users.js
+create controllers/sessions.js

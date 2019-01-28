@@ -37,10 +37,16 @@ app.use('/closetswap', itemsController);
 // =======================================
 //              AUTHORIZATION ROUTES
 // =======================================
-// Test route
+// INDEX route
 app.get('/', (req, res) => {
-  res.send('index.route');
+  res.render('index.ejs');
 });
+
+// =======================================
+//          USER - 7 restful routes
+// =======================================
+const userController = require('./controllers/users_controller.js');
+app.use('/users', userController);
 
 // =======================================
 //              LISTENER
