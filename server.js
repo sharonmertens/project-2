@@ -35,6 +35,14 @@ app.use(methodOverride('_method'));
 app.use('/closetswap', itemsController);
 
 // =======================================
+//              AUTHORIZATION ROUTES
+// =======================================
+// Test route
+app.get('/', (req, res) => {
+  res.send('index.route');
+});
+
+// =======================================
 //              LISTENER
 // =======================================
 app.listen(PORT, () => {

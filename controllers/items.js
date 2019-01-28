@@ -88,6 +88,7 @@ router.delete('/:id', (req, res) => {
 // ---------------------------------------
 router.get('/', (req, res) => {
   // res.send('This is my Closet Swap Index Page');
+  
   Item.find({}, (err, allItems) => {
     res.render(
       './items/index.ejs',
