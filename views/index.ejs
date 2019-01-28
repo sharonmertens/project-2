@@ -11,6 +11,7 @@
       <% if (currentUser) { %>
         Welcome <%=currentUser.username%>, to Closet Swap!
         <br>
+        <a href="/closetswap">Closet Items</a>
         <!-- log out link disguised as a button using form -->
         <form action="/sessions?_method=DELETE" method="POST">
           <input type="submit" value="Log Out">

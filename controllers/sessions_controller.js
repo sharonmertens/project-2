@@ -14,14 +14,14 @@ sessions.post('/', (req, res) => {
     if (req.body.password, foundUser.password) {
       if (err) console.log(err);
       req.session.currentUser = foundUser
-      res.redirect('/');
+      res.redirect('/closetswap');
     } else {
       res.send("<a href='/'>Wrong Password</a>");
     }
   });
 });
 
-// end the session
+// end the session and redirect back to sign in page
 sessions.delete('/', (req, res) => {
   req.session.destroy(() => {
     res.redirect('/')

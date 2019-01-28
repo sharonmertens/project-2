@@ -4,7 +4,8 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <h1>CLOSET ITEM INDEX PAGE</h1>
+    <h1>CLOSET ITEM INDEX PAGE</h1> <br>
+    <h1>Welcome to your closet</h1>
     <!-- ADD LINK FOR CREATE ITEM  -->
     <nav>
       <a href="/closetswap/new">Add your item</a>
@@ -37,5 +38,9 @@
     </nav>
   <% } %>
 </ul>
+<!-- log out link disguised as a button using form -->
+<form action="/sessions?_method=DELETE" method="POST">
+  <input type="submit" value="Log Out">
+</form>
   </body>
 </html>
