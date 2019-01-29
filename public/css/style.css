@@ -7,6 +7,14 @@ img {
   width: 100px;
 }
 
+ul {
+  list-style: none;
+}
+
+/* ------------- */
+/* TOP NAV CSS  */
+/* ------------- */
+
 /* add a grey background color to the top navigation */
 .topnav {
   background-color: grey;
@@ -14,7 +22,7 @@ img {
 }
 
 /* style the links inside the navigation bar */
-.topnav a {
+.topnav .navBarItem {
   float: left;
   color: white;
   text-align: center;
@@ -33,4 +41,10 @@ img {
 .topnav a.active {
   background: white;
   color: black;
+}
+
+/* style the logout */
+.topnav .logout {
+  float: right;
+  background-color: grey;
 }

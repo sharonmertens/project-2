@@ -73,3 +73,5 @@ build user model
 build sessions controller
 
 our post request is going to set up a session for the user. we'll add the user data to our sessions object and we'll be able to have access to it throughout our app
+
+bcrypt and hash out passwords

@@ -5,16 +5,24 @@
   </head>
   <body>
     <h1>CLOSET ITEM INDEX PAGE</h1> <br>
-    <h1>Welcome to your closet</h1>
+    <h1>Welcome To Your Closet</h1>
     <div class="topnav">
-      <a class="active" href="#">Your Closet</a>
-      <a href="#">Search Closets</a>
-      <a href="#">Swaped Items</a>
-      <a href="#">Logout</a>
+      <a class="active navBarItem" href="#">Your Closet</a>
+      <a class="navBarItem" href="#">Search Closets</a>
+      <a class="navBarItem" href="#">Swaped Items</a>
+      <a class="navBarItem" href="#">Find Friends</a>
+      <!-- log out link disguised as a button using form -->
+      <div class="logout">
+        <form class="nav-item" action="/sessions?_method=DELETE" method="POST">
+          <input class="nav-item" type="submit" value="Log Out">
+        </form>
+      </div>
+
+      <!-- <a href="#">Logout</a> -->
     </div>
     <!-- ADD LINK FOR CREATE ITEM  -->
     <nav>
-      <a href="/closetswap/new">Add your item</a>
+      <a href="/closetswap/new">Add New Item</a>
     </nav>
 <ul>
   <% for (let i = 0; i < items.length; i ++ ) { %>
