@@ -4,64 +4,66 @@
     <% include ../partials/head.ejs %>
   </head>
   <body>
-    <h1>CLOSET ITEM INDEX PAGE</h1> <br>
-    <h1>Welcome To Your Closet</h1>
-    <div class="topnav">
-      <a class="active navBarItem" href="#">Your Closet</a>
-      <a class="navBarItem" href="#">Search Closets</a>
-      <a class="navBarItem" href="#">Swaped Items</a>
-      <a class="navBarItem" href="#">Find Friends</a>
-      <!-- log out link disguised as a button using form -->
-      <div class="logout">
-        <form class="nav-item" action="/sessions?_method=DELETE" method="POST">
-          <input class="nav-item" type="submit" value="Log Out">
-        </form>
-      </div>
-
-      <!-- <a href="#">Logout</a> -->
-    </div>
-    <!-- ADD LINK FOR CREATE ITEM  -->
-    <nav>
-      <a href="/closetswap/new">Add New Item</a>
-    </nav>
-<ul>
-  <% for (let i = 0; i < items.length; i ++ ) { %>
-    <li>
-      <img src="<%=items[i].img%>"> <br>
-      Type: <a href="/closetswap/<%=items[i].id;%>">
-        <%=items[i].type; %>
-      </a>
-      <br>
-      Description: <%=items[i].description%> <br>
-      Brand: <%=items[i].brand%> <br>
-      Price: <%=items[i].price%> <br>
-      Size: <%=items[i].size%> <br>
-
-
-          <!-- ADD FORM FOR DELETE BUTTON  -->
-          <form action="/closetswap/<%=items[i].id;%>?_method=DELETE" method="POST">
-            <input type="submit" value="DELETE">
-          </form>
-          <!-- ADD LINK FOR EDIT ITEM  -->
+    <div class="container">
+          <h1>CLOSET ITEM INDEX PAGE</h1> <br>
+          <h1>Welcome To Your Closet</h1>
+          <!-- <nav class="nav justify-content-center"> -->
+            <div class="topnav">
+              <a class="active navBarItem" href="#">Your Closet</a>
+              <a class="navBarItem" href="#">Search Closets</a>
+              <a class="navBarItem" href="#">Swaped Items</a>
+              <a class="navBarItem" href="#">Find Friends</a>
+              <!-- log out link disguised as a button using form -->
+              <div class="logout">
+                <form class="" action="/sessions?_method=DELETE" method="POST">
+                  <input class="nav-item" type="submit" value="Log Out">
+                </form>
+              </div>
+            </div>
+          <!-- </nav> -->
+          <!-- ADD LINK FOR CREATE ITEM  -->
           <nav>
-            <a href="/closetswap/<%=items[i].id;%>/edit">Edit</a>
+            <a href="/closetswap/new">Add New Item</a>
           </nav>
+      <ul>
+        <% for (let i = 0; i < items.length; i ++ ) { %>
+          <li>
+            <img src="<%=items[i].img%>"> <br>
+            Type: <a href="/closetswap/<%=items[i].id;%>">
+              <%=items[i].type; %>
+            </a>
+            <br>
+            Description: <%=items[i].description%> <br>
+            Brand: <%=items[i].brand%> <br>
+            Price: <%=items[i].price%> <br>
+            Size: <%=items[i].size%> <br>
 
-          <p>
-            <% if (items[i].available === true) { %>
-              You are in luck! This item is available!
-            <% }  else { %>
-              Sorry. This item is unavailable. Check out something else!
-            <% } %>
-          </p>
-          <a href="#">Request Item</a>
-    </li>
 
-  <% } %>
-</ul>
-<!-- log out link disguised as a button using form -->
-<form action="/sessions?_method=DELETE" method="POST">
-  <input type="submit" value="Log Out">
-</form>
+                <!-- ADD FORM FOR DELETE BUTTON  -->
+                <form action="/closetswap/<%=items[i].id;%>?_method=DELETE" method="POST">
+                  <input type="submit" value="DELETE">
+                </form>
+                <!-- ADD LINK FOR EDIT ITEM  -->
+                <nav>
+                  <a href="/closetswap/<%=items[i].id;%>/edit">Edit</a>
+                </nav>
+
+                <p>
+                  <% if (items[i].available === true) { %>
+                    You are in luck! This item is available!
+                  <% }  else { %>
+                    Sorry. This item is unavailable. Check out something else!
+                  <% } %>
+                </p>
+                <a href="#">Request Item</a>
+          </li>
+
+        <% } %>
+      </ul>
+      <!-- log out link disguised as a button using form -->
+      <form action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Log Out">
+      </form>
+    </div>
   </body>
 </html>

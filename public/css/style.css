@@ -47,4 +47,5 @@ ul {
 .topnav .logout {
   float: right;
   background-color: grey;
+  padding: 10px;
 }
