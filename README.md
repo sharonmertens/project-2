@@ -1,6 +1,8 @@
 # project-2
 CRUD App
 
+https://guarded-anchorage-25881.herokuapp.com/
+
 SET UP EXPRESS APP:
 (all the steps)
 
